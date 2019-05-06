@@ -1,14 +1,15 @@
-class Task
-	attr_accessor :size, :completed_at
+class Task < ApplicationRecord
+	belongs_to :gatherer
+# 	attr_accessor :size, :completed_at
 
-	def initialize(options = {}) #give a hash as argument
-		mark_completed(options[:completed_at]) if options[:completed_at]
-#		@completed = options[:completed]
-		@size = options[:size]
-	end
+# 	def initialize(options = {}) #give a hash as argument
+# 		mark_completed(options[:completed_at]) if options[:completed_at]
+# #		@completed = options[:completed]
+# 		@size = options[:size]
+# 	end
 
 	def mark_completed(date = Time.current)
-		@completed_at = date
+		self.completed_at = date
 	end
 
 	def complete?

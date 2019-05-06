@@ -1,9 +1,11 @@
-class Gatherer
-	attr_accessor :tasks, :due_date
+class Gatherer < ApplicationRecord
+	has_many :tasks, dependent: :destroy
+	validates :name, presence: true
+	# attr_accessor :tasks, :due_date
 
-	def initialize
-		@tasks = []
-	end
+	# def initialize
+	# 	@tasks = []
+	# end
 
 	def self.velocity_length_in_days
 		21

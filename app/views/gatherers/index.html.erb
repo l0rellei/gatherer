@@ -1,0 +1,17 @@
+<h1>All Gatherers</h1>
+<table>
+	<thread>
+		<tr>
+			<td>Project Name</td>
+			<td>Total Project Size</td>
+		</tr>
+	</thread>
+	<tbody>
+		<% @gatherers.each do |gatherer| %>
+			<tr class="gatherer-row" id="<%= dom_id(gatherer) %>">
+				<td class= "name"><%= gatherer.name %></td>
+				<td class= "total_size"><%= gatherer.total_size %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
